@@ -1,0 +1,7 @@
+nome_completo = str(input('Digite o seu nome completo, por favor: ')).strip()
+print('Analisando o seu nome é possível ver que...')
+print('Em letras maiuscula fica {}'.format(nome_completo.upper()))
+print('Em letras minúscula fica {}'.format(nome_completo.lower()))
+print('O seu nome tem {} letras'.format(len(nome_completo)))
+separacao = nome_completo.split()
+print('A primeira letra do seu nome tem {} letras'.format(len(separacao[0])))

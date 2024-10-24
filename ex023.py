@@ -1,0 +1,7 @@
+numero = int(input('Digite um número qulquer: '))
+numero_str = str(numero).zfill(4)
+print('Ao analisar o número posso perceber que ele possui...')
+print('{} Unidades'.format(numero[0]))
+print('{} Dezenas'.format(numero[1]))
+print('{} Centenas'.format(numero[2]))
+print('{} Unidade de Milhar'.format(numero[3]))
