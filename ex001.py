@@ -1,2 +1,2 @@
-saudacao = "Hello World!"
-print(f'{saudacao}')
+'''saudacao = "Hello World!"
+print(f'{saudacao}')'''
