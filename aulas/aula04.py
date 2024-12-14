@@ -1,0 +1,7 @@
+print("Olá Mundo!")
+print(7 + 4)
+print("7" + "4")
+nome = str(input("Qual é o seu nome: "))
+idade = int(input("Quantos anos você tem: "))
+peso = float(input("Qual é o seu peso: "))
+print("O seu nome é" , nome, "e vocÊ tem ", idade,"anos e o seu peso é ", peso)

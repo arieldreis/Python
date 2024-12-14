@@ -1,0 +1,1 @@
+# Instalando Python 3 e o IDLE.

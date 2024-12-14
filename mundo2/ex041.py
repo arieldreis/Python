@@ -1,3 +1,4 @@
+
 ano = int(input('\033[0;93mAno de Nascimento:\033[m'))
 if ano >= 2015:
     mirim = 2024-ano

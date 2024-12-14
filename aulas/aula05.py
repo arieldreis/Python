@@ -1,0 +1,1 @@
+#Instalando o PYCHARM e o python 3 para celular.

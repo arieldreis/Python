@@ -1,4 +1,3 @@
-#Esperando para ser resolvido
 print('====Lojas Marinho====')
 valor_compra = float(input('Preço das Compras: '))
 print('FORMAS DE PAGAMENTO')
