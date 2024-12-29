@@ -1,1 +1,3 @@
-#How to become a progrmmmer in python
+#How to become a programmmer in python
+
+import pyautogui
