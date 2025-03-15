@@ -1,0 +1,10 @@
+import random
+n1 = random.randint(0,10)
+n2 = random.randint(0,10)
+n3 = random.randint(0,10)
+n4 = random.randint(0,10)
+n5 = random.randint(0,10)
+tupla_valores = (n1, n2, n3, n4, n5)
+print(f"O valores sorteados foram: {n1} {n2} {n3} {n4} {n5}")
+print(f"O maior valore sorteado foi: {max(tupla_valores)}")
+print(f"O menor valor sorteado foi: {min(tupla_valores)}")
