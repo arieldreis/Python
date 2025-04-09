@@ -14,7 +14,8 @@ pyautogui.press("win")
 pyautogui.write("Edge")
 pyautogui.press('enter')
 # digita um link no edge
-pyautogui.write('https://dlp.hashtagtreinamentos.com/python/intensivao/login')
+site = 'https://dlp.hashtagtreinamentos.com/python/intensivao/login'
+pyautogui.write(site)
 pyautogui.press('enter')
 # espera 4 segundos
 time.sleep(4)
@@ -30,6 +31,7 @@ print(tabela)
 # Cadastrar produtos e clicar no primeiro input
 for lista in tabela.index:
     pyautogui.click(703, 316)
+    # usado pra acessar linhas e colunas de um DataFrame usando rótulos (ou seja, os nomes dos índices e colunas).
     codigo = tabela.loc[lista, "codigo"] # O comando loc é comando de localização
     pyautogui.write(codigo)
     pyautogui.press("tab") # Passar para o próximo campo
@@ -42,20 +44,21 @@ for lista in tabela.index:
     pyautogui.write(tipo)
     pyautogui.press("tab") # Passar para o próximo campo
 
-    categoria = tabela.loc[lista, "categoria"]
+    categoria = str(tabela.loc[lista, "categoria"])  # Na tabela tem campos que são números o certo e trasnformamos esse comando em uma string, ou seja tudo irá virar um texto
     pyautogui.write(categoria)
     pyautogui.press("tab") # Passar para o proxímo campo
 
-    preco = tabela.loc[lista, "preco"]
+    preco = str(tabela.loc[lista, "preco"])
     pyautogui.write(preco)
     pyautogui.press("tab") # Passar para o proxímo campo
 
-    preco_unitario = tabela.loc[lista, "preco_unitario"]
+    preco_unitario = str(tabela.loc[lista, "preco_unitario"])
     pyautogui.write(preco_unitario)
     pyautogui.press("tab") # Passar para o proxímo campo
 
-    obs = "AINDA NÃO DEFINIDO"
-    pyautogui.write(obs)
+    obs = str(tabela.loc[lista, "obs"])
+    if obs != "nan":
+        pyautogui.write(obs)
     pyautogui.press("tab")
     pyautogui.press("enter")
 
