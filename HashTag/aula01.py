@@ -27,5 +27,39 @@ pyautogui.click(925, 677)
 # Importar a base de dados
 tabela = pandas.read_csv("product.csv")
 print(tabela)
-# cadastrar produtos
-pyautogui.click(703, 316)
+# Cadastrar produtos e clicar no primeiro input
+for lista in tabela.index:
+    pyautogui.click(703, 316)
+    codigo = tabela.loc[lista, "codigo"] # O comando loc é comando de localização
+    pyautogui.write(codigo)
+    pyautogui.press("tab") # Passar para o próximo campo
+
+    marca = tabela.loc[lista, "marca"]
+    pyautogui.write(marca)
+    pyautogui.press("tab") # Passar para o próximo campo
+
+    tipo = tabela.loc[lista, "tipo"]
+    pyautogui.write(tipo)
+    pyautogui.press("tab") # Passar para o próximo campo
+
+    categoria = tabela.loc[lista, "categoria"]
+    pyautogui.write(categoria)
+    pyautogui.press("tab") # Passar para o proxímo campo
+
+    preco = tabela.loc[lista, "preco"]
+    pyautogui.write(preco)
+    pyautogui.press("tab") # Passar para o proxímo campo
+
+    preco_unitario = tabela.loc[lista, "preco_unitario"]
+    pyautogui.write(preco_unitario)
+    pyautogui.press("tab") # Passar para o proxímo campo
+
+    obs = "AINDA NÃO DEFINIDO"
+    pyautogui.write(obs)
+    pyautogui.press("tab")
+    pyautogui.press("enter")
+
+    '''NOVO COMANDO'''
+    '''No comando scroll do pyautogui se vc colocar números positivos a rolagem é para cima se for negativo a rolagem é para baixo.'''
+    pyautogui.scroll(10000)
+# Passo 5: Repetir todos os produtos
