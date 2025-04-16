@@ -5,7 +5,7 @@ while True:
         "nome": str(input("Nome: ")),
         "idade": int(input("Idade: "))
     }
-    sexo = {"sexo": str(input("Sexo [M/F]: ")).lower().capitalize()}
+    sexo = {"sexos": str(input("Sexo [M/F]: ")).lower().capitalize()}
     if sexo["sexo"] != "M" or sexo["sexo"] != "F":
         print("ERRO! Por favor, digite apenas M ou F.")
         sexo = {"sexo": str(input("Sexo [M/F]: ")).lower().capitalize()}
