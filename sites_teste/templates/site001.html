@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&family=Boldonse&family=Jersey+15&family=Oswald:wght@200..700&family=Playwrite+AU+SA:wght@100..400&family=Playwrite+VN:wght@100..400&family=Special+Gothic+Condensed+One&family=Yellowtail&display=swap');
+        :root {
+            --cor1: white;
+            --cor2: green;
+            --cor3: black;
+            --cor4: lightgray;
+            --cor5: red;
+        }
+        body {
+            background-color: var(--cor4);
+            color: var(--cor3);
+            font-family: "Yellowtail", 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        header > h1 {
+            font-size: 3em;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            width: 100%;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 500px;
+        }
+        form {
+            display: flex;
+            width: 100%;
+            max-width: 500px;
+        }
+        input[type="text"] {
+            flex: 1;
+            padding: 15px;
+            border: 1px solid var(--cor3);
+            border-radius: 4px 0px 0px 4px;
+            font-size: 1em;
+            font-family: "Yellowtail", 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--cor2);
+        }
+        button {
+            padding: 15px;
+            cursor: pointer;
+            border-radius: 0px 4px 4px 0px;
+            border: none;
+            background-color: var(--cor2);
+            font-family: "Yellowtail", 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+            color: var(--cor1);
+            font-size: 1em;
+            transition: 0.3s ease-in-out;
+        }
+        button:hover {
+            background-color: rgb(112, 206, 18);
+        }
+      .appear_message{
+          background-color: var(--cor1);
+          border-radius: 5px;
+          width: 30%;
+      }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Lista de Tarefas</h1>
+        </header>
+        <section>
+            <form>
+                <input type="text" id="idcampo" placeholder="Digite a tarefa">
+                <button type="submit" onclick="add()">Adicionar</button>
+            </form>
+        </section>
+        <div class="container">
+            <div class="secao"></div>
+        </div>
+    </main>
+    <script>
+        function add(){
+            event.preventDefault();
+            let idcampo = document.getElementById('idcampo');
+            let input = idcampo.value;
+            let item = document.createElement('span');
+            item.classList.add('appear_message');
+            if(input === ""){
+                window.alert("[ERRO]! CAMPO VAZIO, PREENCHA UMA MENSAGEM.");
+            }else{
+                let mensagem = document.createElement('span');
+
+                mensagem.textContent = `${input}`;
+            }
+        }
+      function remove(){
+
+      }
+    </script>
+</body>
+</html>

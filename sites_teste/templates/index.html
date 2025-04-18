@@ -25,9 +25,14 @@
 <body>
     <h1>MEU SITE EM PYTHON</h1>
     <button type="submit" onclick="teste()">CLIQUE!</button>
+    <p id="demo"></p>
     <script>
         function teste(){
-            window.alert("FUNCIONOU!");
+            let numero1 = parseFloat(window.prompt("Digite um número"));
+            let numero2 = parseFloat(window.prompt("Digite um número"));
+            let resultado = document.getElementById('demo');
+            let soma = numero1 + numero2;
+            resultado.innerHTML = `A soma entre ${numero1} + ${numero2} = ${soma}`;
         }
     </script>
 </body>
