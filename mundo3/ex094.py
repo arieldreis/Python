@@ -24,7 +24,12 @@ while True:
     if dados["confirmacao"] == "N":
         print("Todos os usuários foram cadastrados com sucesso.")
         print("Veja os usuários cadastrados logo abaixo.")
-        print(lista)
         break
     if dados["confirmacao"] == "S":
         print("Usuário cadastrado com sucesso!")
+quant = len(lista)
+soma_idades = sum(pessoa["ageuser"] for pessoa in lista)
+media = soma_idades / quant
+print(f"A) Ao todo temos {quant} pessoas cadastradas.")
+print(f"B) A média de idade é {media} anos.")
+print(f"As mulheres cadastradas foram ...")
