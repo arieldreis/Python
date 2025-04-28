@@ -1,4 +1,5 @@
-impares = []
+import time
+impares = pares = lista = []
 while True:
     numeros = int(input("Digite um número: "))
     resposta = str(input("Deseja continuar [SIM/NÃO]: ")).lower().capitalize()
