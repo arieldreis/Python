@@ -31,5 +31,20 @@ quant = len(lista)
 soma_idades = sum(pessoa["ageuser"] for pessoa in lista)
 media = soma_idades / quant
 print(f"A) Ao todo temos {quant} pessoas cadastradas.")
-print(f"B) A média de idade é {media} anos.")
-print(f"As mulheres cadastradas foram ...")
+print(f"B) A média de idade é {media:.2f} anos.")
+tothomens = 0
+totmulher = 0
+for dado in lista:
+    if dado["sexouser"] == "M":
+        tothomens+=1
+    elif dado["sexouser"] == "F":
+        totmulher += 1
+print(f"C) As mulheres cadastradas foram {totmulher} ao total.")
+print("D) Lista das pessoas acima da média: ")
+for acima_media in lista:
+    print(acima_media)
+    if acima_media['ageuser'] >= media:
+        # print(f"Nome: {acima_media['nomeuser']}; Sexo: {acima_media['sexouser']}; Idade: {acima_media['ageuser']}")
+        for k,v in acima_media.items():
+            print(f"{k} = {v}; ", end='; ')
+print("<<<ENCERRADO!>>>")
