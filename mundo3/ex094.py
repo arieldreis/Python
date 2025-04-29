@@ -42,9 +42,9 @@ for dado in lista:
 print(f"C) As mulheres cadastradas foram {totmulher} ao total.")
 print("D) Lista das pessoas acima da média: ")
 for acima_media in lista:
-    print(acima_media)
     if acima_media['ageuser'] >= media:
-        # print(f"Nome: {acima_media['nomeuser']}; Sexo: {acima_media['sexouser']}; Idade: {acima_media['ageuser']}")
-        for k,v in acima_media.items():
-            print(f"{k} = {v}; ", end='; ')
+        print(f"Nome: {acima_media['nomeuser']}; Sexo: {acima_media['sexouser']}; Idade: {acima_media['ageuser']}")
+    else:
+        print("Nenhum usuário está acima da média.")
+print()
 print("<<<ENCERRADO!>>>")
