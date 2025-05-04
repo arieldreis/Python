@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CONTADOR DE CLIQUE</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&family=Boldonse&family=Jersey+15&family=Oswald:wght@200..700&family=Playwrite+AU+SA:wght@100..400&family=Playwrite+VN:wght@100..400&family=Special+Gothic+Condensed+One&family=Tagesschrift&family=Yellowtail&display=swap');
+        body{
+            background-color: lightgray;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: "Special Gothic Condensed One", Arial, Helvetica, sans-serif;
+            color: black;
+        }
+        h1{
+            font-size: 3em;
+        }
+        button{
+            border: none;
+            padding: 20px;
+            color: white;
+            border-radius: 10px;
+            font-family: "Special Gothic Condensed One", Arial, Helvetica, sans-serif;
+            cursor: pointer;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>CONTADOR DE CLIQUE</h1>
+    <h2>CLIQUES<span id="cont">0</span></h2>
+    <button onclick="contador()">CLICK ON!</button>
+    <script>
+        function contador(){
+            let cont = document.getElementById('cont');
+            let soma = parseInt(cont.innerHTML);
+            soma+=1;
+            cont.innerHTML = `${soma}`;
+        }
+    </script>
+</body>
+</html>
