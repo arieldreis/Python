@@ -6,5 +6,5 @@ dados = {
     "nome":["Ana", "João"],
     "idade": ["20", "25"]
 }
-df = pd.DataFrame(dados)
+df = pd.DataFrame()
 print(df)
