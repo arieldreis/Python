@@ -2,6 +2,7 @@ lista = []
 dici = {}
 while True:
     dici["nome"] = input("Nome: ")
+    dici["idade"] = int(input("Idade: "))
     if dici['nome'] == "N":
         print("Ok")
         break
