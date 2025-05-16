@@ -16,6 +16,6 @@ pyautogui.write(nome_contato)
 pyautogui.press("enter")
 pyautogui.click(994, 951)
 for cont in range(1, 100):
-    numero = cont+1
+    numero = str( cont + 1)
     pyautogui.write(numero)
     pyautogui.press("enter")
