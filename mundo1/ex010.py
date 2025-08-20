@@ -6,16 +6,25 @@ import requests
 
 def moedas():
     reais = float(entrada.get())
-    url = "https://economia.awesomeapi.com.br/last/USD,EUR"
+    url = "https://economia.awesomeapi.com.br/last/USD,EUR,MXN"
     requisicao = requests.get(url)
-    print(requisicao.json())
-    dolar = reais * 0.17
-    euro = reais * 0.16
-    pesomexicano = reais * 3.36
-    label_resultado['text'] = (f"Você tem R${reais} na sua carteira, e convertendo para ás seguintes moedas:\n"
-                               f"US${round(dolar, 3)}\n"
-                               f"€{round(euro, 3)}\n"
-                               f"MXN{round(pesomexicano, 3)}")
+    dados = requisicao.json()
+
+    dicDolar = dados["USDBRL"]
+    dolarValue = float(dicDolar["low"])
+    dicEuro = dados["EURBRL"]
+    euroValue = float(dicEuro["low"])
+    dicPesoMexicano = dados["MXNBRL"]
+    pesoValue = float(dicPesoMexicano["low"])
+
+    dolar = reais / dolarValue
+    euro = reais / euroValue
+    pesomexicano = reais / pesoValue
+
+    label_resultado['text'] = (f"Você tem R${reais} na sua carteira equivalente:\n"
+                               f"US$ {round(dolar, 2)}\n"
+                               f"€ {round(euro, 2)}\n"
+                               f"MXN {round(pesomexicano, 2)}")
 root = tk.Tk()
 root.title('Conversor de Moedas')
 root.geometry("500x600")
