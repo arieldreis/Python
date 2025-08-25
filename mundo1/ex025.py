@@ -1,2 +1,3 @@
-cidade = input('Digite o nome de sua cidade, por favor: ')
-print(cidade.endswith('Santo'))
+nome = str(input("Qual é o seu nome completo? ")).lower()
+verificacao = "silva" in nome
+print(f"O seu nome tem Silva? {verificacao}")
