@@ -1,28 +1,28 @@
-lista = []
-dadosjogador = {}
-dadosjogador["nome_jogador"] = str(input("Nome do Jogador: "))
-dadosjogador["partidas"] = int(input(f"Quantas partidas {dadosjogador['nome_jogador']} jogou: "))
-for cont in range(0, dadosjogador['partidas']):
-    dadosjogador['gols'] = int(input(f"Quantos gols na {cont}ª partida: "))
-    lista.append(dadosjogador['gols'])
-dadosjogador['soma'] = sum(lista)
-dicionario = {
-    "nome": dadosjogador['nome_jogador'],
-    "gols": lista,
-    "total": dadosjogador['soma']
+jogador =  {
+    "jogados": str(input("Nome do jogador: ")),
 }
+total = 0
+lista = []
+partidas = int(input(f"Quantas partidas {jogador["jogados"]} jogou: "))
+for c in range(0, partidas):
+    gols = {
+        "gols_marcados": int(input(f"Quantos gols na partida {c}: ")),
+    }
+    lista.append(gols["gols_marcados"])
+    total += gols["gols_marcados"]
 print("=-"*30)
-print(f"{dicionario}")
+dic = {
+    "nome_jogador": jogador["jogados"],
+    "numero_de_goals": lista,
+    "saldo_goals": total
+}
+print(f"{dic}")
 print("=-"*30)
-print(f"O campo nome tem o valor {dicionario['nome']}")
-print(f"O campo gols tem o valor {dicionario['gols']}")
-print(f"O campo total tem o valor {dicionario['total']}")
+print(f"O campo nome tem o valor {jogador['jogados']}")
+print(f"O campo goals tem o valor {dic['numero_de_goals']}")
+print(f"O campo total tem o valor {total}")
 print("=-"*30)
-print(f"O jogagor {dicionario['nome']} jogou {dadosjogador['partidas']} partidas")
-for indice, gol in enumerate(lista):
-    print(f" => Na patida {indice}, fez {gol} gols.")
-print("=-"*30)
-
-'''Permite iterar sobre sequências enquanto acompanhamos o 
-índice de cada elemento. Ela facilita a manipulação dos dados durante a iteração 
-e é especialmente útil quando precisamos percorrer várias sequências simultaneamente'''
+print(f"O jogador {jogador['jogados']} jogou {partidas} partidas.")
+for x in range (0, partidas):
+    print(f"Na partida {x}, fez {lista[x]} goals.")
+print(f"Foi um total de {total} goals.")

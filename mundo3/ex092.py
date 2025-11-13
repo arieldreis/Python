@@ -1,25 +1,24 @@
 import datetime
-import time
-trabalhador  = {
+ano = datetime.date.today().year
+dados_trabalhador = {
     "nome": str(input("Nome: ")),
-    "idade": int(input("Idade: ")),
-    "carteira_trabalho": int(input("Carteira de Trabalho (0 não tem): "))
+    "ano_nascimento": int(input("Ano nascimento: ")),
+    "carteira": int(input("Carteira de Trabalho (0) não tem: "))
 }
-if trabalhador["carteira_trabalho"] == 0:
-    print(f" - Nome tem o valor {trabalhador['nome']}")
-    print(f" - Idade tem o valor {trabalhador['idade']} anos")
-    print(f" - CTPS tem o valor {trabalhador['carteira_trabalho']}")
+idade = ano - dados_trabalhador["ano_nascimento"]
+if dados_trabalhador["carteira"] == 0:
+    print("=-"*30)
+    print(f" - NOME TEM O VALOR {dados_trabalhador['nome']}.")
+    print(f" - IDADE TEM O VALOR {idade} anos.")
+    print(f" - CTPS TEM O VALOR 0.")
 else:
-    trabalhador["contratacao"] = int(input("Ano de Contratação: "))
-    trabalhador["salario"] = float(input("Salário: R$"))
-    # Respostas finais
-    trabalhador['ano'] = ano = datetime.datetime.now().year
-    trabalhador["aposentadoria"] = trabalhador["idade"] + ((trabalhador["contratacao"] + 35) - trabalhador['ano'])
-
-'''DADOS FINAIS DO RESULTADO'''
-print(f" - Nome tem o valor {trabalhador['nome']}")
-print(f" - Idade tem o valor {trabalhador['idade']} anos")
-print(f" - CTPS tem o valor {trabalhador['carteira_trabalho']}")
-print(f" - Contratação tem o valor {trabalhador['contratacao']}")
-print(f" - Salário tem o valor de R${trabalhador['salario']}")
-print(f" - Aposentadoria tem o valor {trabalhador['aposentadoria']} anos")
+    dados_contratacao = {
+        "contratação": int(input("Ano de Contratação: ")),
+        "salario": float(input("Salário: R$"))
+    }
+    aposentadoria = idade + (dados_contratacao["contratação"] + 35) - ano
+    print("=-" * 30)
+    print(f" - NOME TEM O VALOR {dados_trabalhador['nome']}.")
+    print(f" - IDADE TEM O VALOR {idade} anos.")
+    print(f" - CPTS TEM O VALOR {dados_trabalhador['carteira']}")
+    print(f" - APOSENTADORIA TEM O VALOR {aposentadoria} anos.")
