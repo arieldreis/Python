@@ -8,4 +8,3 @@ while c > 0:
     print(f' x ' if c > 1 else ' = ', end="")
     print('{}' , end=" ".format(fatorial))
     c-=1
-#print(f'O fatorial de {n}  é {f}')
