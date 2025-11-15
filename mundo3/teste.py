@@ -1,4 +1,4 @@
-lista = []
+'''lista = []
 dici = {}
 while True:
     dici["nome"] = input("Nome: ")
@@ -8,4 +8,9 @@ while True:
         break
     lista.append(dici.copy())
 for item in lista:
-    print(f"{item}")
+    print(f"{item}")'''
+
+lista = [["João", 100], ["Malcon", 75], ["Elton", 75], ["John", 100], ["Kaique", 67]]
+for index in lista:
+    maior = max(index[1])
+    print(maior)
